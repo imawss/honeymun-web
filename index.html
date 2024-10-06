@@ -1,146 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HONEYMUN'25 | Home</title>
-    <link rel="shortcut icon" href="assets/img/logo-transparent.ico" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
-</head>
-<style>
-
+    <link
+      rel="shortcut icon"
+      href="assets/img/logo-transparent.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <style>
     .container {
-        display: flex;
-        justify-content: center; 
-        align-items: center; 
-        height: 100vh; 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
 
     .sec.main-sec {
-    text-align: center; 
-    }   
+      text-align: center;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(28px);
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      min-height: 300px;
+      min-width: 500px;
+      z-index: 1000;
 
-    #countdownTitle{
-    text-align: center;
-    display: block;
-    color: white;
-    font-family: "Poppins", sans-serif;
-    font-weight: 900;
-    font-style: italic;
-    font-size: larger;
-    text-shadow: 2px 2px 2px #00000090;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; 
+      align-items: center; 
     }
 
-    ul{
-        display: flex;
-        justify-content: center;
-        text-shadow: 2px 2px 2px #00000090;
+    #countdownTitle {
+      text-align: center;
+      display: block;
+      color: white;
+      font-family: "Poppins", sans-serif;
+      font-weight: 900;
+      font-style: italic;
+      font-size: larger;
+      text-shadow: 2px 2px 2px #00000090;
     }
 
-    ul li{
-        list-style-type: none;
-        text-transform: uppercase;
-        text-align: center;
-        text-align: center;
-        color: white;
-        font-family: "Poppins", sans-serif;
-        font-weight: 900;
-        font-style: italic;
-        font-size: larger;
-        text-shadow: 2px 2px 2px #00000090;
+    ul {
+      display: flex;
+      justify-content: center;
+      text-shadow: 2px 2px 2px #00000090;
     }
 
-    li span{
-        display: block;
-        text-shadow: 2px 2px 2px #00000090;
+    ul li {
+      list-style-type: none;
+      text-transform: uppercase;
+      text-align: center;
+      text-align: center;
+      color: white;
+      font-family: "Poppins", sans-serif;
+      font-weight: 900;
+      font-style: italic;
+      font-size: larger;
+      text-shadow: 2px 2px 2px #00000090;
     }
 
-    li.seperator{
-        margin: 0 10px;
-        line-height: 1;
-        list-style-type: none;
-        text-transform: uppercase;
-        text-align: center;
-        text-align: center;
-        color: white;
-        font-family: "Poppins", sans-serif;
-        font-weight: 900;
-        font-style: italic;
-        font-size: larger;
-        text-shadow: 2px 2px 2px #00000090;
+    li span {
+      display: block;
+      text-shadow: 2px 2px 2px #00000090;
     }
 
-    li:first-of-type{
-        margin-right: 10vh;
-        text-shadow: 2px 2px 2px #00000090;
+    li.seperator {
+      margin: 0 10px;
+      line-height: 1;
+      list-style-type: none;
+      text-transform: uppercase;
+      text-align: center;
+      text-align: center;
+      color: white;
+      font-family: "Poppins", sans-serif;
+      font-weight: 900;
+      font-style: italic;
+      font-size: larger;
+      text-shadow: 2px 2px 2px #00000090;
     }
-</style>
-<body>
+
+    li:first-of-type {
+      margin-right: 10vh;
+      text-shadow: 2px 2px 2px #00000090;
+    }
+  </style>
+  <body>
     <header>
-        <nav class="navbar">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="assets/img/logo.png" alt="Logo" />
-                </a>
-            </div>
-            <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#services">Committees</a>
-                <a href="#contact">Team</a>
-                <a href="#contact">Committees</a>
-            </div>
-        </nav>
+      <nav class="navbar">
+        <div class="logo">
+          <a href="index.html">
+            <img src="assets/img/logo.png" alt="Logo" />
+          </a>
+        </div>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#services">Committees</a>
+          <a href="#contact">Team</a>
+          <a href="#contact">Committees</a>
+        </div>
+      </nav>
     </header>
 
     <div class="container">
-        <div class="sec main-sec">
-            <h2 id="countdownTitle">Zirveye Son:</h2>
-            <ul>
-                <li><span id="days">00</span>gün</li>
-                <li><span id="hours">00</span>saat</li>
-                <li class="seperator">:</li>
-                <li><span id="minutes">00</span>dakika</li>
-                <li class="seperator">:</li>
-                <li><span id="seconds">00</span>saniye</li>
-            </ul>
-        </div>
+      <div class="sec main-sec">
+        <h2 id="countdownTitle">LAST</h2>
+        <ul>
+          <li><span id="days">00</span>DAYS</li>
+          <li><span id="hours">00</span>HOURS</li>
+          <li class="seperator">:</li>
+          <li><span id="minutes">00</span>MINUTES</li>
+          <li class="seperator">:</li>
+          <li><span id="seconds">00</span>SECONDS</li>
+        </ul>
+        <h2 id="countdownTitle">FOR THE HONEYMUN'25</h2>
+      </div>
     </div>
 
     <script>
-        // Converting string to required date format 
-        let deadline = new Date("OCT 15, 2024 8:30")
-                 .getTime();
-     
-             // To call defined fuction every second
-             let x = setInterval(function () {
-     
-                 // Getting current time in required format
-                 let now = new Date().getTime();
-     
-                 // Calculating the difference
-                 let t = deadline - now;
-     
-                 // Getting value of days, hours, minutes, seconds
-                 let days = Math.floor(t / (1000 * 60 * 60 * 24));
-                 let hours = Math.floor(
-                     (t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                 let minutes = Math.floor(
-                     (t % (1000 * 60 * 60)) / (1000 * 60));
-                 let seconds = Math.floor(
-                     (t % (1000 * 60)) / 1000);
-     
-     
-                 // Output the remaining time
-                 const daysRemain = document.getElementById("days");
-                 const hoursRemain = document.getElementById("hours");
-                 const minutesRemain = document.getElementById("minutes");
-                 const secondsRemain = document.getElementById("seconds");
-     
-                 daysRemain.innerText = days;
-                 hoursRemain.innerText = hours;
-                 minutesRemain.innerText = minutes;
-                 secondsRemain.innerText = seconds;
-             }, 1000);
-         </script>
-</body>
+      let deadline = new Date("Feb 14, 2025 8:30").getTime();
+
+      let x = setInterval(function () {
+        let now = new Date().getTime();
+
+        let t = deadline - now;
+
+        let days = Math.floor(t / (1000 * 60 * 60 * 24));
+        let hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+        let seconds = Math.floor((t % (1000 * 60)) / 1000);
+
+        const daysRemain = document.getElementById("days");
+        const hoursRemain = document.getElementById("hours");
+        const minutesRemain = document.getElementById("minutes");
+        const secondsRemain = document.getElementById("seconds");
+
+        daysRemain.innerText = days;
+        hoursRemain.innerText = hours;
+        minutesRemain.innerText = minutes;
+        secondsRemain.innerText = seconds;
+      }, 1000);
+    </script>
+  </body>
 </html>
