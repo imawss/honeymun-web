@@ -48,10 +48,12 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      gap: 20px; /* Elements spacing */
+      justify-content: center; /* Center content vertically */
+      gap: 10px; /* Reduced gap between sections */
       padding: 20px;
       text-align: center;
+      height: 100vh; /* Center all content vertically within the viewport */
+      box-sizing: border-box;
     }
 
     .top-sec {
@@ -59,40 +61,38 @@
       font-style: italic;
       font-size: 2em;
       color: var(--text-main);
-      margin-bottom: 20px;
+      margin-bottom: 10px; /* Reduced gap between heading and images */
     }
 
     .main-sec {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px; /* Reduced gap between images */
+      justify-items: center;
     }
 
     .profile {
       position: relative;
-      width: 150px;
-      height: 300px;
+      width: 200px;
+      height: 200px;
       overflow: hidden;
       border-radius: 12px;
       perspective: 1000px;
       cursor: pointer;
     }
 
-    .profile img {
+    .profile-inner {
+      position: relative;
       width: 100%;
       height: 100%;
-      object-fit: cover; 
-      border-radius: 12px;
-      backface-visibility: hidden;
+      transform-style: preserve-3d;
       transition: transform 0.6s;
     }
 
-    .profile img,
-    .profile .details {
-      position: absolute;
+    .profile img {
       width: 100%;
       height: 100%;
+      object-fit: cover;
       border-radius: 12px;
       backface-visibility: hidden;
     }
@@ -123,7 +123,33 @@
       }
 
       .top-sec {
-        font-size: 1.5em;
+        font-size: 1.5em; /* Adjust font size for mobile */
+      }
+
+      .main-sec {
+        grid-template-columns: repeat(2, 1fr); /* Display in two columns */
+        gap: 10px; /* Maintain gap between items */
+      }
+
+      .profile {
+        width: 150px;
+        height: 150px;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .top-sec {
+        font-size: 1.2em; /* Further reduce font size for very small screens */
+      }
+
+      .main-sec {
+        grid-template-columns: repeat(2, 1fr); /* Keep two columns */
+        gap: 5px; /* Smaller gap on very small screens */
+      }
+
+      .profile {
+        width: 120px;
+        height: 120px;
       }
     }
   </style>
