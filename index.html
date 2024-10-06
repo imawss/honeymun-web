@@ -5,29 +5,142 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HONEYMUN'25 | Home</title>
     <link rel="shortcut icon" href="assets/img/logo-transparent.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
 </head>
+<style>
+
+    .container {
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        height: 100vh; 
+    }
+
+    .sec.main-sec {
+    text-align: center; 
+    }   
+
+    #countdownTitle{
+    text-align: center;
+    display: block;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+    font-size: larger;
+    text-shadow: 2px 2px 2px #00000090;
+    }
+
+    ul{
+        display: flex;
+        justify-content: center;
+        text-shadow: 2px 2px 2px #00000090;
+    }
+
+    ul li{
+        list-style-type: none;
+        text-transform: uppercase;
+        text-align: center;
+        text-align: center;
+        color: white;
+        font-family: "Poppins", sans-serif;
+        font-weight: 900;
+        font-style: italic;
+        font-size: larger;
+        text-shadow: 2px 2px 2px #00000090;
+    }
+
+    li span{
+        display: block;
+        text-shadow: 2px 2px 2px #00000090;
+    }
+
+    li.seperator{
+        margin: 0 10px;
+        line-height: 1;
+        list-style-type: none;
+        text-transform: uppercase;
+        text-align: center;
+        text-align: center;
+        color: white;
+        font-family: "Poppins", sans-serif;
+        font-weight: 900;
+        font-style: italic;
+        font-size: larger;
+        text-shadow: 2px 2px 2px #00000090;
+    }
+
+    li:first-of-type{
+        margin-right: 10vh;
+        text-shadow: 2px 2px 2px #00000090;
+    }
+</style>
 <body>
     <header>
-        <nav>
-            <div class="navbar">
+        <nav class="navbar">
+            <div class="logo">
                 <a href="index.html">
-                    <img src="" alt="Logo">
+                    <img src="assets/img/logo.png" alt="Logo" />
                 </a>
-                <ul>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="committees.html">Committees</a></li>
-                    <li><a href="team.html">Team</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
+            </div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#services">Committees</a>
+                <a href="#contact">Team</a>
+                <a href="#contact">Committees</a>
             </div>
         </nav>
     </header>
 
     <div class="container">
-        <div class="section section-top"></div> <!-- TODO: Kalan süre sayacı eklenecek, altında başvuru sayfasına yönlendiren buton-->
-        <div class="section section-m1"></div> <!-- TODO: Önceki senelerden fotoğraflar -->
-        <div class="section section-m2"></div> <!-- TODO: Duyurular bölümü-->
-        <div class="section section-bottom"></div> <!-- TODO: Konumlu Venue bilgisi-->
+        <div class="sec main-sec">
+            <h2 id="countdownTitle">Zirveye Son:</h2>
+            <ul>
+                <li><span id="days">00</span>gün</li>
+                <li><span id="hours">00</span>saat</li>
+                <li class="seperator">:</li>
+                <li><span id="minutes">00</span>dakika</li>
+                <li class="seperator">:</li>
+                <li><span id="seconds">00</span>saniye</li>
+            </ul>
+        </div>
     </div>
+
+    <script>
+        // Converting string to required date format 
+        let deadline = new Date("OCT 15, 2024 8:30")
+                 .getTime();
+     
+             // To call defined fuction every second
+             let x = setInterval(function () {
+     
+                 // Getting current time in required format
+                 let now = new Date().getTime();
+     
+                 // Calculating the difference
+                 let t = deadline - now;
+     
+                 // Getting value of days, hours, minutes, seconds
+                 let days = Math.floor(t / (1000 * 60 * 60 * 24));
+                 let hours = Math.floor(
+                     (t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                 let minutes = Math.floor(
+                     (t % (1000 * 60 * 60)) / (1000 * 60));
+                 let seconds = Math.floor(
+                     (t % (1000 * 60)) / 1000);
+     
+     
+                 // Output the remaining time
+                 const daysRemain = document.getElementById("days");
+                 const hoursRemain = document.getElementById("hours");
+                 const minutesRemain = document.getElementById("minutes");
+                 const secondsRemain = document.getElementById("seconds");
+     
+                 daysRemain.innerText = days;
+                 hoursRemain.innerText = hours;
+                 minutesRemain.innerText = minutes;
+                 secondsRemain.innerText = seconds;
+             }, 1000);
+         </script>
 </body>
 </html>
