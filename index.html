@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <style>
+    :root{
+        --text-main: #2D2226;
+    }
     .container {
       display: flex;
       justify-content: center;
@@ -24,31 +27,29 @@
       background: rgba(255, 255, 255, 0.15);
       backdrop-filter: blur(28px);
       box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-      min-height: 300px;
+      min-height: 350px;
       min-width: 500px;
       z-index: 1000;
 
       display: flex;
       flex-direction: column;
-      justify-content: center; 
-      align-items: center; 
+      justify-content: center;
+      align-items: center;
     }
 
     #countdownTitle {
       text-align: center;
       display: block;
-      color: white;
+      color: var(--text-main); 
       font-family: "Poppins", sans-serif;
       font-weight: 900;
       font-style: italic;
-      font-size: larger;
-      text-shadow: 2px 2px 2px #00000090;
+      font-size: x-large;
     }
 
     ul {
       display: flex;
       justify-content: center;
-      text-shadow: 2px 2px 2px #00000090;
     }
 
     ul li {
@@ -56,17 +57,15 @@
       text-transform: uppercase;
       text-align: center;
       text-align: center;
-      color: white;
+      color: var(--text-main); 
       font-family: "Poppins", sans-serif;
       font-weight: 900;
       font-style: italic;
       font-size: larger;
-      text-shadow: 2px 2px 2px #00000090;
     }
 
     li span {
       display: block;
-      text-shadow: 2px 2px 2px #00000090;
     }
 
     li.seperator {
@@ -76,17 +75,39 @@
       text-transform: uppercase;
       text-align: center;
       text-align: center;
-      color: white;
+      color: var(--text-main); 
       font-family: "Poppins", sans-serif;
       font-weight: 900;
       font-style: italic;
       font-size: larger;
-      text-shadow: 2px 2px 2px #00000090;
     }
 
     li:first-of-type {
       margin-right: 10vh;
-      text-shadow: 2px 2px 2px #00000090;
+    }
+
+    .apply-button {
+      display: inline-block;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 12px;
+      background: #4ccc1552; 
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); 
+      color: #164303;
+      font-family: "Poppins", sans-serif;
+      font-weight: 900;
+      font-size: 16px;
+      font-style: italic;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.3); 
+    }
+
+    .apply-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(179, 221, 111, 0.2); 
+      background: #4ccc1568; 
     }
   </style>
   <body>
@@ -98,10 +119,10 @@
           </a>
         </div>
         <div class="nav-links">
-          <a href="#about">About</a>
-          <a href="#services">Committees</a>
-          <a href="#contact">Team</a>
-          <a href="#contact">Committees</a>
+          <a href="about.html">About</a>
+          <a href="committees.html">Committees</a>
+          <a href="team.html">Team</a>
+          <a href="contact.html">Contact</a>
         </div>
       </nav>
     </header>
@@ -118,6 +139,7 @@
           <li><span id="seconds">00</span>SECONDS</li>
         </ul>
         <h2 id="countdownTitle">FOR THE HONEYMUN'25</h2>
+        <a href="#" class="apply-button">APPLY NOW</a>
       </div>
     </div>
 
