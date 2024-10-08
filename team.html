@@ -177,11 +177,10 @@
 
     <script>
       let currentSlideIndex = 0;
-      let userInteracted = false; // Kullanıcı etkileşimini izlemek için değişken
+      let userInteracted = false; 
       const slides = document.querySelectorAll(".slider img");
       const dots = document.querySelectorAll(".dot");
 
-      // Otomatik kaydırmayı başlatan interval
       let intervalId = setInterval(() => {
         if (!userInteracted) {
           currentSlideIndex = (currentSlideIndex + 1) % slides.length;
@@ -198,9 +197,8 @@
       }
 
       function currentSlide(index) {
-        userInteracted = true; // Kullanıcı tıkladı, otomatik kaydırma duracak
-        clearInterval(intervalId); // Otomatik kaydırmayı durdur
-        showSlide(index);
+        userInteracted = true; 
+        clearInterval(intervalId); 
       }
     </script>
   </body>
