@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HONEYMUN'25 | Team</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      href="assets/img/logo-transparent.ico"
+      type="image/x-icon"
+    />
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900&display=swap");
 
@@ -158,34 +163,31 @@
             <span class="dot" onclick="currentSlide(9)"></span>
           </div>
           <img
-            src="assets/img/heads/ddg.jpg"
+            src="assets/img/heads/sg.jpg"
             alt="Team Member 1"
             class="active"
           />
           <img src="assets/img/heads/dg.jpg" alt="Team Member 2" />
-          <img src="assets/img/heads/admin.jpg" alt="Team Member 3" />
-          <img src="assets/img/heads/dsg.jpg" alt="Team Member 4" />
-          <img src="assets/img/heads/ent.jpg" alt="Team Member 5" />
-          <img src="assets/img/heads/finance.jpg" alt="Team Member 6" />
-          <img src="assets/img/heads/it.jpg" alt="Team Member 7" />
-          <img src="assets/img/heads/pr.jpg" alt="Team Member 8" />
-          <img src="assets/img/heads/security.jpg" alt="Team Member 9" />
-          <img src="assets/img/heads/admin.jpg" alt="Team Member 10" />
+          <img src="assets/img/heads/ddg.jpg" alt="Team Member 3" />
+          <img src="assets/img/heads/pr.jpg" alt="Team Member 4" />
+          <img src="assets/img/heads/finance.jpg" alt="Team Member 5" />
+          <img src="assets/img/heads/it.jpg" alt="Team Member 6" />
+          <img src="assets/img/heads/ent.jpg" alt="Team Member 7" />
+          <img src="assets/img/heads/admin.jpg" alt="Team Member 8" />
+          <img src="assets/img/heads/press.jpg" alt="Team Member 9" />
+          <img src="assets/img/heads/security.jpg" alt="Team Member 10" />
         </div>
       </div>
     </section>
 
     <script>
       let currentSlideIndex = 0;
-      let userInteracted = false; 
       const slides = document.querySelectorAll(".slider img");
       const dots = document.querySelectorAll(".dot");
 
       let intervalId = setInterval(() => {
-        if (!userInteracted) {
-          currentSlideIndex = (currentSlideIndex + 1) % slides.length;
-          showSlide(currentSlideIndex);
-        }
+        currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+        showSlide(currentSlideIndex);
       }, 5000);
 
       function showSlide(index) {
@@ -197,8 +199,12 @@
       }
 
       function currentSlide(index) {
-        userInteracted = true; 
-        clearInterval(intervalId); 
+        clearInterval(intervalId);
+        showSlide(index);
+        intervalId = setInterval(() => {
+          currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+          showSlide(currentSlideIndex);
+        }, 5000);
       }
     </script>
   </body>
