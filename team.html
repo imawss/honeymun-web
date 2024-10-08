@@ -4,192 +4,107 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HONEYMUN'25 | Team</title>
-    <link
-      rel="shortcut icon"
-      href="assets/img/logo-transparent.ico"
-      type="image/x-icon"
-    />
     <link rel="stylesheet" href="style.css" />
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900&display=swap");
 
       :root {
         --text-main: #2d2226;
       }
 
       body {
-        overflow: hidden;
         margin: 0;
         font-family: "Poppins", sans-serif;
         display: flex;
         align-items: center;
         justify-content: center;
         min-height: 100vh;
+        background: url("assets/img/background.jpg") no-repeat center center/cover;
       }
 
-      body::before {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url("assets/img/background.jpg");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        transform: scaleX(-1);
-        z-index: -1;
-        pointer-events: none;
+      .glass-container {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        padding: 40px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        width: 90%;
+        max-width: 800px;
+        height: auto; 
+        margin: 0 auto;
+        max-height: 80vh; 
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
       }
 
-      .container {
+      .team-section {
         display: flex;
         flex-direction: column;
-        align-items: center;
         justify-content: center;
-        gap: 5px; /* Dikey boşluk azaltıldı */
-        padding: 40px 10px 10px; /* Üst padding azaltıldı */
+        align-items: center;
         text-align: center;
-        box-sizing: border-box;
+        width: 100%;
       }
 
-      .top-sec {
-        font-weight: 900;
-        font-style: italic;
-        font-size: 1.8em;
+      .team-title {
+        font-size: 3rem;
         color: var(--text-main);
-        margin-bottom: 2px; /* Yazıyla resimler arasındaki boşluk azaltıldı */
+        margin-bottom: 20px;
       }
 
-      .main-sec {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 4px; /* Fotoğraflar arasındaki boşluk yarıya indirildi */
-        justify-items: center;
-        width: 100%;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      .profile {
+      .slider {
         position: relative;
-        width: 125px;
-        height: 125px;
+        width: 100%;
+        max-width: 700px;
+        border-radius: 10px;
         overflow: hidden;
-        border-radius: 12px;
-        perspective: 1000px;
-        cursor: pointer;
-        transition: transform 0.3s ease-in-out;
       }
 
-      .profile:hover {
-        transform: scale(1.05);
-      }
-
-      .profile-inner {
-        position: relative;
+      .slider img {
         width: 100%;
-        height: 100%;
-        transform-style: preserve-3d;
-        transition: transform 0.6s, opacity 0.6s;
+        display: none;
+        transition: opacity 0.5s ease-in-out;
       }
 
-      .profile img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 12px;
+      .slider img.active {
         display: block;
       }
 
-      .profile .details {
+      .dots {
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        bottom: 20px; 
+        left: 50%;
+        transform: translateX(-50%);
         display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: #2d2226c5;
-        color: #fff;
-        font-size: medium;
-        opacity: 0;
-        transition: opacity 0.6s ease-in-out;
-        border-radius: 12px;
-        font-weight: 900;
-        font-family: "Poppins", sans-serif;
-        font-style: italic;
+        gap: 10px;
+        backdrop-filter: blur(10px);
       }
 
-      .profile:hover .details {
-        opacity: 1;
+      .dots span {
+        height: 10px;
+        width: 10px;
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 50%;
+        display: inline-block;
+        cursor: pointer;
+        transition: background-color 0.3s;
       }
 
-      /* Navbar Font Style */
-      .nav-links a {
-        font-weight: 500; /* Medium weight */
+      .dots .active {
+        background-color: rgba(255, 255, 255, 0.8);
       }
 
-      /* Responsive Styles */
-      @media screen and (max-width: 1024px) {
-        .main-sec {
-          grid-template-columns: repeat(3, 1fr); /* 3 kolonlu düzen */
+      @media (max-width: 768px) {
+        .team-title {
+          font-size: 2.5rem;
         }
 
-        .profile {
-          width: 160px;
-          height: 160px;
-        }
-      }
-
-      @media screen and (max-width: 768px) {
-        .main-sec {
-          grid-template-columns: repeat(2, 1fr);
-          gap: 4px; /* Mobilde de boşluk azaltıldı */
-        }
-
-        .profile {
-          width: 120px; /* Daha küçük fotoğraflar */
-          height: 120px;
-        }
-
-        .top-sec {
-          font-size: 1.5em;
-          margin-bottom: 2px; /* Mobilde de boşluk azaltıldı */
-        }
-      }
-
-      @media screen and (max-width: 480px) {
-        .main-sec {
-          grid-template-columns: repeat(2, 1fr);
-          gap: 2px; /* Küçük ekranlarda boşluk azaltıldı */
-        }
-
-        .profile {
-          width: 90px; /* Fotoğraflar küçültüldü */
-          height: 90px;
-        }
-
-        .top-sec {
-          font-size: 1.3em;
-          margin-bottom: 1px; /* En küçük ekranlarda boşluk azaltıldı */
-        }
-
-        .profile .details {
-          font-size: small;
-        }
-      }
-
-      /* Responsive Alignment */
-      @media screen and (min-width: 1025px) {
-        .main-sec {
-          grid-auto-rows: 180px;
-          align-items: center;
-        }
-        .main-sec:last-child {
-          justify-content: center; /* Alt satırda kalan kutucukları ortalar */
+        .slider {
+          width: 90%;
         }
       }
     </style>
@@ -209,80 +124,57 @@
         </div>
       </nav>
     </header>
-
-    <div class="container">
-      <div class="sec top-sec">
-        <h2>Meet With Our Team</h2>
-      </div>
-
-      <div class="sec main-sec">
-        <div class="profile">
-          <div class="profile-inner">
-            <img src="assets/img/heads/orga-head.jpg" alt="Director" />
-            <div class="details">Director General</div>
+    <section class="glass-container">
+      <div class="team-section">
+        <h1 class="team-title">MEET WITH OUR TEAM</h1>
+        <div class="slider">
+          <div class="dots">
+            <span class="dot active" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+            <span class="dot" onclick="currentSlide(6)"></span>
+            <span class="dot" onclick="currentSlide(7)"></span>
+            <span class="dot" onclick="currentSlide(8)"></span>
+            <span class="dot" onclick="currentSlide(9)"></span>
           </div>
-        </div>
-        <div class="profile">
-          <div class="profile-inner">
-            <img
-              src="assets/img/heads/deputy-director.jpg"
-              alt="Deputy Director General"
-            />
-            <div class="details">Deputy Director General</div>
-          </div>
-        </div>
-        <div class="profile">
-          <div class="profile-inner">
-            <img
-              src="assets/img/heads/deputy-secretary.jpg"
-              alt="Deputy Secretary General"
-            />
-            <div class="details">Deputy Secretary General</div>
-          </div>
-        </div>
-        <div class="profile">
-          <div class="profile-inner">
-            <img src="assets/img/heads/pr.jpg" alt="Heads Of PR" />
-            <div class="details">Heads Of PR</div>
-          </div>
-        </div>
-        <div class="profile">
-          <div class="profile-inner">
-            <img src="assets/img/heads/press.jpg" alt="Head Of Press" />
-            <div class="details">Head Of Press</div>
-          </div>
-        </div>
-        <div class="profile">
-          <div class="profile-inner">
-            <img src="assets/img/heads/admin.jpg" alt="Heads Of Admin" />
-            <div class="details">Heads Of Admin</div>
-          </div>
-        </div>
-        <div class="profile">
-          <div class="profile-inner">
-            <img src="assets/img/heads/finance.jpg" alt="Heads Of Finance" />
-            <div class="details">Heads Of Finance</div>
-          </div>
-        </div>
-        <div class="profile">
-          <div class="profile-inner">
-            <img src="assets/img/heads/hoit.jpg" alt="Heads Of IT" />
-            <div class="details">Heads Of IT</div>
-          </div>
-        </div>
-        <div class="profile">
-          <div class="profile-inner">
-            <img src="assets/img/heads/security.jpg" alt="Heads Of Security" />
-            <div class="details">Head Of Security</div>
-          </div>
-        </div>
-        <div class="profile">
-          <div class="profile-inner">
-            <img src="assets/img/heads/security.jpg" alt="Heads Of Security" />
-            <div class="details">Head Of Entertainment</div>
-          </div>
+          <img src="assets/img/heads/ddg.jpg" alt="Team Member 1" class="active" />
+          <img src="assets/img/heads/dg.jpg" alt="Team Member 2" />
+          <img src="assets/img/heads/admin.jpg" alt="Team Member 3" />
+          <img src="assets/img/heads/dsg.jpg" alt="Team Member 4" />
+          <img src="assets/img/heads/ent.jpg" alt="Team Member 5" />
+          <img src="assets/img/heads/finance.jpg" alt="Team Member 6" />
+          <img src="assets/img/heads/it.jpg" alt="Team Member 7" />
+          <img src="assets/img/heads/pr.jpg" alt="Team Member 8" />
+          <img src="assets/img/heads/security.jpg" alt="Team Member 9" />
+          <img src="assets/img/heads/admin.jpg" alt="Team Member 10" />
         </div>
       </div>
-    </div>
+    </section>
+
+    <script>
+      let currentSlideIndex = 0;
+      const slides = document.querySelectorAll(".slider img");
+      const dots = document.querySelectorAll(".dot");
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.toggle("active", i === index);
+          dots[i].classList.toggle("active", i === index);
+        });
+        currentSlideIndex = index;
+      }
+
+      function currentSlide(index) {
+        showSlide(index);
+      }
+
+      setInterval(() => {
+        currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+        showSlide(currentSlideIndex);
+      }, 5000); 
+    </script>
   </body>
 </html>
